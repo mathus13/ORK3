@@ -1,0 +1,15 @@
+{
+  "name": "Amtgard/Ork3",
+  "description": "Amtgard Online Record Keeper",
+  "minimum-stability": "dev",
+  "license": "Apache",
+  "authors": [
+    {
+      "name": "Shawn Barratt",
+      "email": "mathus13@gmail.com"
+    }
+  ],
+  "require": {
+    "webonyx/graphql-php": "dev-master"
+  }
+}

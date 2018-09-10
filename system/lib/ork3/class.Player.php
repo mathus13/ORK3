@@ -15,13 +15,13 @@ class Player extends Ork3 {
             $notes = array();
             if ($this->notes->find()) do {
                 $notes[] = array(
-                        'NoteId' => $this->notes->mundane_note_id,
-                        'Note' => $this->notes->note,
-                        'Description' => $this->notes->description,
-                        'GivenBy' => $this->notes->given_by,
-                        'Date' => $this->notes->date,
-                        'DateComplete' => $this->notes->date_complete,
-                    );
+                    'NoteId' => $this->notes->mundane_note_id,
+                    'Note' => $this->notes->note,
+                    'Description' => $this->notes->description,
+                    'GivenBy' => $this->notes->given_by,
+                    'Date' => $this->notes->date,
+                    'DateComplete' => $this->notes->date_complete,
+                );
             } while ($this->notes->next());
         }
         return $notes;
@@ -160,11 +160,11 @@ class Player extends Ork3 {
 	}
 
 	public function AttendanceForPlayer($request) {
-		$sql = "select 
-              a.*, c.name as class_name, 
-                ifnull(p.name, ep.name) as park_name, 
-                ifnull(k.name, ek.name) as kingdom_name, 
-                e.name as event_name, e.park_id as event_park_id, e.kingdom_id as event_kingdom_id, 
+		$sql = "select
+              a.*, c.name as class_name,
+                ifnull(p.name, ep.name) as park_name,
+                ifnull(k.name, ek.name) as kingdom_name,
+                e.name as event_name, e.park_id as event_park_id, e.kingdom_id as event_kingdom_id,
                 ep.name as event_park_name, ek.name as event_kingdom_name
 					from " . DB_PREFIX . "attendance a
 						left join " . DB_PREFIX . "park p on a.park_id = p.park_id
